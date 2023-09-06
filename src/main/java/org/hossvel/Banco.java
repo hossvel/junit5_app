@@ -36,3 +36,4 @@ public class Banco {
         origen.debito(monto);
         destino.credito(monto);
     }
+}
