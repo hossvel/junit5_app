@@ -1,5 +1,7 @@
 package org.hossvel;
 
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
@@ -9,6 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class CuentaTest {
 
     @Test
+    @DisplayName("probando atributos de la cuenta corriente")
     void testNombreCuenta() {
         String esperado = "Andres";
         Cuenta cuenta = new Cuenta();
@@ -19,6 +22,7 @@ class CuentaTest {
 
     }
     @Test
+    @DisplayName("el saldo, que no sea null, mayor que cero, valor esperado.")
     void testSaldoCuenta() {
         Cuenta cuenta = new Cuenta("Hossmell", new BigDecimal("1000.12345"));
         assertNotNull(cuenta.getSaldo(),()->"el saldo no puede ser Null");
@@ -46,7 +50,9 @@ class CuentaTest {
         assertEquals("1100.12345", cuenta.getSaldo().toPlainString());
     }
     @Test
+    @Disabled
     void testDineroInsuficienteExceptionCuenta() {
+       fail();
         Cuenta cuenta = new Cuenta("Hossmell", new BigDecimal("1000.12345"));
         Exception exception = assertThrows(DineroInsuficienteException.class, () -> {
             cuenta.debito(new BigDecimal(1500));
