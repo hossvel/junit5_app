@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c7da6b8-1780-456f-98a5-28c4e5862b13" name="Changes" comment="TDD">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hossvel/Cuenta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hossvel/Cuenta.java" afterDir="false" />
+    <list default="true" id="2c7da6b8-1780-456f-98a5-28c4e5862b13" name="Changes" comment="assertThrows">
       <change beforePath="$PROJECT_DIR$/src/test/java/org/hossvel/CuentaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hossvel/CuentaTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,7 +59,7 @@
       <recent name="org.hossvel" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CuentaTest.testDineroInsuficienteExceptionCuenta">
+  <component name="RunManager" selected="JUnit.CuentaTest.testRelacionBancoCuentas">
     <configuration name="CuentaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="junit5_app" />
       <extension name="coverage">
@@ -125,7 +123,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CuentaTest.testSaldoCuenta" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CuentaTest.testRelacionBancoCuentas" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="junit5_app" />
       <extension name="coverage">
         <pattern>
@@ -135,7 +133,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.hossvel" />
       <option name="MAIN_CLASS_NAME" value="org.hossvel.CuentaTest" />
-      <option name="METHOD_NAME" value="testSaldoCuenta" />
+      <option name="METHOD_NAME" value="testRelacionBancoCuentas" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -143,11 +141,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CuentaTest.testRelacionBancoCuentas" />
         <item itemvalue="JUnit.CuentaTest.testDineroInsuficienteExceptionCuenta" />
         <item itemvalue="JUnit.CuentaTest" />
         <item itemvalue="JUnit.CuentaTest.testCreditoCuenta" />
         <item itemvalue="JUnit.CuentaTest.testDebitoCuenta" />
-        <item itemvalue="JUnit.CuentaTest.testSaldoCuenta" />
       </list>
     </recent_temporary>
   </component>
@@ -174,12 +172,20 @@
       <option name="project" value="LOCAL" />
       <updated>1694039978336</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="assertThrows">
+      <created>1694040384848</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1694040384848</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Primer TEST" />
     <MESSAGE value="TDD" />
-    <option name="LAST_COMMIT_MESSAGE" value="TDD" />
+    <MESSAGE value="assertThrows" />
+    <option name="LAST_COMMIT_MESSAGE" value="assertThrows" />
   </component>
 </project>
