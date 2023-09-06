@@ -21,7 +21,7 @@ class CuentaTest {
     @Test
     void testSaldoCuenta() {
         Cuenta cuenta = new Cuenta("Hossmell", new BigDecimal("1000.12345"));
-        assertNotNull(cuenta.getSaldo());
+        assertNotNull(cuenta.getSaldo(),()->"el saldo no puede ser Null");
         assertEquals(1000.12345, cuenta.getSaldo().doubleValue());
         assertFalse(cuenta.getSaldo().compareTo(BigDecimal.ZERO) < 0);
         assertTrue(cuenta.getSaldo().compareTo(BigDecimal.ZERO) > 0);
@@ -71,7 +71,7 @@ class CuentaTest {
                         () -> "el valor del saldo de la cuenta2 no es el esperado."),
                 () -> assertEquals("3000", cuenta1.getSaldo().toPlainString(),
                         () -> "el valor del saldo de la cuenta1 no es el esperado."),
-                () -> assertEquals(2, banco.getCuentas().size(), () -> "el banco no tienes las cuentas esperadas"),
+                () -> assertEquals(2, banco.getCuentas().size(), () -> "El banco no tienes las cuentas esperadas"),
                 () -> assertEquals("Banco del Estado", cuenta1.getBanco().getNombre()),
                 () -> assertEquals("Andres", banco.getCuentas().stream()
                         .filter(c -> c.getPersona().equals("Andres"))
