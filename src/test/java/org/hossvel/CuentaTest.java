@@ -1,9 +1,7 @@
 package org.hossvel;
 
 import org.junit.jupiter.api.*;
-import org.junit.jupiter.api.condition.DisabledOnOs;
-import org.junit.jupiter.api.condition.EnabledOnOs;
-import org.junit.jupiter.api.condition.OS;
+import org.junit.jupiter.api.condition.*;
 
 import java.math.BigDecimal;
 
@@ -122,4 +120,18 @@ class CuentaTest {
     void testNoWindows() {
     }
 
+    @Test
+    @EnabledOnJre(JRE.JAVA_8)
+    void soloJdk8() {
+    }
+
+    @Test
+    @EnabledOnJre(JRE.JAVA_19)
+    void soloJDK19() {
+    }
+
+    @Test
+    @DisabledOnJre(JRE.JAVA_19)
+    void testNoJDK19() {
+    }
 }
