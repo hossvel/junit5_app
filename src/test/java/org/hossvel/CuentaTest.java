@@ -40,6 +40,7 @@ class CuentaTest {
         System.out.println("finalizando el test");
     }
     @Nested
+    @Tag("cuentaNombre")
     @DisplayName("probando atributos de la cuenta corriente")
     class CuentaNombreTest{
         @Test
@@ -137,6 +138,8 @@ class CuentaTest {
         String esperado = "Dinero Insuficiente";
         assertEquals(esperado, actual);
     }
+    @Tag("cuenta")
+    @Tag("banco")
     @Test
     void testRelacionBancoCuentas() {
         //fail();
@@ -291,6 +294,7 @@ class CuentaTest {
 
 }
 
+    @Tag("param")
     @Nested
     class PruebasParametrizadasTest{
 
