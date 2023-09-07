@@ -1,15 +1,23 @@
 package org.hossvel;
 
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import java.math.BigDecimal;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class CuentaTest {
+    Cuenta cuenta;
+    @BeforeEach
+    void initMetodoTest(){
+        System.out.println("iniciando por cada Metodo");
+       cuenta  = new Cuenta("Hossmell", new BigDecimal("1000.12345"));
+    }
+    @AfterEach
+    void finalMetodoTest(){
+        System.out.println("fin de cada Metodo");
 
+    }
     @Test
     @DisplayName("probando atributos de la cuenta corriente")
     void testNombreCuenta() {
@@ -24,7 +32,7 @@ class CuentaTest {
     @Test
     @DisplayName("el saldo, que no sea null, mayor que cero, valor esperado.")
     void testSaldoCuenta() {
-        Cuenta cuenta = new Cuenta("Hossmell", new BigDecimal("1000.12345"));
+
         assertNotNull(cuenta.getSaldo(),()->"el saldo no puede ser Null");
         assertEquals(1000.12345, cuenta.getSaldo().doubleValue());
         assertFalse(cuenta.getSaldo().compareTo(BigDecimal.ZERO) < 0);
@@ -33,7 +41,6 @@ class CuentaTest {
 
     @Test
     void testDebitoCuenta() {
-        Cuenta cuenta = new Cuenta("Hossmell", new BigDecimal("1000.12345"));
 
         cuenta.debito(new BigDecimal(100));
         assertNotNull(cuenta.getSaldo());
@@ -43,7 +50,7 @@ class CuentaTest {
 
     @Test
     void testCreditoCuenta() {
-        Cuenta cuenta = new Cuenta("Hossmell", new BigDecimal("1000.12345"));
+
         cuenta.credito(new BigDecimal(100));
         assertNotNull(cuenta.getSaldo());
         assertEquals(1100, cuenta.getSaldo().intValue());
@@ -53,8 +60,7 @@ class CuentaTest {
     @Disabled
     void testDineroInsuficienteExceptionCuenta() {
        fail();
-        Cuenta cuenta = new Cuenta("Hossmell", new BigDecimal("1000.12345"));
-        Exception exception = assertThrows(DineroInsuficienteException.class, () -> {
+         Exception exception = assertThrows(DineroInsuficienteException.class, () -> {
             cuenta.debito(new BigDecimal(1500));
         });
         String actual = exception.getMessage();
