@@ -19,10 +19,19 @@ import static org.junit.jupiter.api.Assumptions.*;
 //@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class CuentaTest {
     Cuenta cuenta;
+
+    private TestInfo testInfo;
+    private TestReporter testReporter;
     @BeforeEach
-    void initMetodoTest(){
-        System.out.println("iniciando por cada Metodo");
-       cuenta  = new Cuenta("Hossmell", new BigDecimal("1000.12345"));
+    void initMetodoTest(TestInfo testInfo, TestReporter testReporter){
+
+        this.cuenta = new Cuenta("Hossmell", new BigDecimal("1000.12345"));
+        this.testInfo = testInfo;
+        this.testReporter = testReporter;
+        System.out.println("iniciando el metodo.");
+        testReporter.publishEntry(" ejecutando: " + testInfo.getDisplayName() + " " + testInfo.getTestMethod().orElse(null).getName()
+                + " con las etiquetas " + testInfo.getTags());
+
     }
     @AfterEach
     void finalMetodoTest(){
